@@ -12,6 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <div><h1>Hangman</h1></div>
+        <img src="\images\h1.gif">
         <label>Guess a character</label>
         <form action="hangmanServlet" method="post">
             <input type="text" name="guess"><br><br>

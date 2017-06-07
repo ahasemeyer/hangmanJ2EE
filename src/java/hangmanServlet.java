@@ -44,6 +44,7 @@ public class hangmanServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<body><h2>Hangman</h2>");
+            out.println("<img src=\"../src/java/images/h2.gif\" alt=\"\"/>");
             out.println("<h2 style=\"font-family:'Lucida Console', monospace\"> " + game.getDisplayWord() + "</h2>");
             out.println("</body>");
             out.println("</html>");
