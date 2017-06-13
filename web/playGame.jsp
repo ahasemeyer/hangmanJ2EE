@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,7 +13,9 @@ and open the template in the editor.
     </head>
     <body>
         <div><h1>Hangman</h1></div>
-        <img src="\images\h1.gif">
+        <% String pictureFile = "h" + request.getAttribute("state") + ".gif";%>
+        <img src="<%= pictureFile%>"><br><br>
+        <h2> <%= request.getAttribute("displayWord") %></h2>
         <label>Guess a character</label>
         <form action="hangmanServlet" method="post">
             <input type="text" name="guess"><br><br>

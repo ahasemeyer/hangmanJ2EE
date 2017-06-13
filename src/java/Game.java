@@ -26,6 +26,14 @@ public class Game {
     private StringBuffer displayWord; // part of the word (if any) to show user
     private ArrayList<String> wordlist;  // list of words
     
+    
+    @Override
+    public String toString()
+    {
+        return "Game[state="+state+" word="+word+" displayWord="+displayWord.toString()+"]";
+    }
+    
+    
     public Game() {
         word="computer";
         createDisplayWord();
@@ -49,9 +57,15 @@ public class Game {
     public void startNewGame() {
         state = 1;
         word = "computer";
-        createDisplayWord();
+        createDisplayWord();     
+    }
+    
+    public void win()
+    {
         
     }
+    
+    
     
     /*
      * process a user guess return page saying game over user win or lost, or
