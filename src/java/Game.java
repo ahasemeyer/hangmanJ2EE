@@ -25,6 +25,7 @@ public class Game {
     private String word;   // the word to be guessed 
     private StringBuffer displayWord; // part of the word (if any) to show user
     private ArrayList<String> wordlist;  // list of words
+    private boolean debug = false;
     
     
     @Override
@@ -34,30 +35,35 @@ public class Game {
     }
     
     
-    public Game() {
-        word="computer";
-        createDisplayWord();
-        state=1;
-        wordlist=null;
-        generator = new Random();
+    public Game() 
+    {
+        startNewGame();
     }
-    
-    public int getState(){
+
+    public int getState()
+    {
         return state;
     }
     
-    public String getWord(){
+    public String getWord()
+    {
         return word;
     }
     
-    public String getDisplayWord(){
+    public String getDisplayWord()
+    {
         return displayWord.toString();
     }
     
     public void startNewGame() {
         state = 1;
-        word = "computer";
-        createDisplayWord();     
+        if (debug) 
+            word = "computer";
+        else 
+            word = WordPicker.getWord();
+        createDisplayWord();
+        //history = HangmanDB.createHistory(word,username); 
+        //System.out.println("Game  history="+history);    
     }
     
     public void win()
